@@ -16,7 +16,7 @@ class ReactHover extends Component {
       children: PropTypes.object,
       hoverComponentStyle: {
         display: 'none',
-        position: 'absolute'
+        position: 'fixed'
       }
     }
   }
@@ -78,8 +78,8 @@ class ReactHover extends Component {
   }
 
   getCursorPos (e) {
-    const cursorX = e.pageX
-    const cursorY = e.pageY
+    const cursorX = e.clientX
+    const cursorY = e.clientY
     let { options: { followCursor, shiftX, shiftY } } = this.props
     let { hoverComponentStyle } = this.state
     let updatedStyles = null
