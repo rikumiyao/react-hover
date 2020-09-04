@@ -58,7 +58,8 @@ function (_Component) {
       children: _propTypes["default"].object,
       hoverComponentStyle: {
         display: 'none',
-        position: 'fixed'
+        position: 'fixed',
+        zIndex: props.zIndex
       }
     };
     return _this;
@@ -186,7 +187,8 @@ function (_Component) {
 _defineProperty(ReactHover, "propTypes", {
   children: _propTypes["default"].array.isRequired,
   options: _propTypes["default"].object.isRequired,
-  className: _propTypes["default"].string
+  className: _propTypes["default"].string,
+  zIndex: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])
 });
 
 ReactHover.Trigger = _Trigger["default"];

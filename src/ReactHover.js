@@ -7,7 +7,11 @@ class ReactHover extends Component {
   static propTypes = {
     children: PropTypes.array.isRequired,
     options: PropTypes.object.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
+    zIndex: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ])
   }
 
   constructor (props) {
@@ -16,7 +20,8 @@ class ReactHover extends Component {
       children: PropTypes.object,
       hoverComponentStyle: {
         display: 'none',
-        position: 'fixed'
+        position: 'fixed',
+        zIndex: props.zIndex
       }
     }
   }
